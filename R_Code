@@ -6,7 +6,7 @@
 # Jesús Estévez Amoedo (j.esteveza@udc.es)
 
 ################################################################################
-# EJERCICIO 1. ESTUDIO DESCRIPTIVO.
+# ESTUDIO DESCRIPTIVO.
 
 head(employment)
 summary(employment) 
@@ -49,7 +49,7 @@ abline(lm(pib ~ en.paro), col = "red")
 # su influencia en otras variables.
 
 ################################################################################
-# EJERCICIO 2. MATRIZ DE DISTANCIAS.
+# MATRIZ DE DISTANCIAS.
 
 library(StatMatch)
 
@@ -69,7 +69,7 @@ which(Distancias.emp == min_distancia, arr.ind = TRUE)
 which(Distancias.emp == max_distancia, arr.ind = TRUE)
 
 ################################################################################
-# EJERCICIO 5. MDS.
+# MDS.
 
 par(mfrow=c(1, 1))
 emp<- scale(employment)
@@ -87,7 +87,7 @@ B<-H %*% A %*% H
 B
 
 ################################################################################
-# EJERCICIO 6. DIMENSIONES NECESARIAS.
+# DIMENSIONES NECESARIAS.
 # Autovalores
 lambda <- eigen(B)$values
 lambda
@@ -101,7 +101,7 @@ var_exp_acum <- cumsum(var_exp)
 print(var_exp_acum)
 
 ################################################################################
-# EJERCICIO 7. COORDENADAS
+# COORDENADAS
 
 autovec <- eigen(B)$vectors # Autovectores
 autovec
@@ -111,7 +111,7 @@ result <- vec12*sqrt(lambda123)
 result
 
 ################################################################################
-# EJERCICIO 8. REPRESENTACIÓN.
+# REPRESENTACIÓN.
 
 names.c <- c(
   "Albacete", "Alicante", "Almería", "Álava", "Asturias", "Ávila", "Badajoz", 
@@ -147,7 +147,7 @@ text(
 )
 
 ################################################################################
-# EJERCICIO 9. ROTACIÓN. 
+# ROTACIÓN. 
 result.rot <- cbind(result[,1],result[,3],-result[,2])
 result.rot
 
@@ -172,13 +172,13 @@ text(
 )
 
 ################################################################################
-# EJERCICIO 10. APLICAR MÉTODO DE R. 
+# APLICAR MÉTODO DE R. 
 
 cmdscale(D, k=3)
 # Observamos que los resultados son los mismos
 
 ################################################################################
-# EJERCICIO 11. MISMO PROCEDIMIENTO -> VARIABLES, NO OBSERVACIONES.
+# MISMO PROCEDIMIENTO -> VARIABLES, NO OBSERVACIONES.
 
 library(scatterplot3d)
 
